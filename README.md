@@ -4,8 +4,9 @@ This isn't really a test, rather a way to get an idea of how you problem solve a
 
 The project should take you no more than 4 hours to complete.
 
-You have been invited to an empty repository in Gitlab.
-When you get started with the project  make a single commit to the project so we know that you have started. It's a good idea to make a couple of commits during development so we can see how you are progressing.
+## Create a branch for your code
+When you are ready to start create a new branch from the main branch called `dev-{your_name)`
+It's a good idea to make a couple of commits during development so we can see how you are progressing.
 
 
 ## How to submit your code for review
