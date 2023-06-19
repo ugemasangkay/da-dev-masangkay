@@ -1,59 +1,131 @@
-# Digital Awesome Development Test Project
+# FTR Sourcing - Development Test Project (Masangkay)
 
-This isn't really a test, rather a way to get an idea of how you problem solve and develop.
+This is a simple web application built with Laravel and ReactJS. The application allows users to create, update, delete, and display the list of to-do items and total count.
 
-The project should take you no more than 4 hours to complete.
+Table of Contents
+  - [Tech Requirements](#tech-requirements)
+  - [Installation](#installation)
+  - [Features](#features)
+  - [Directory Structure](#directory-structure)
+  - [API List](#api-list)
+  - [Tech Stack](#tech-stack)
+  - [Author](#author)
+  - [License](#license)
 
-## Create a branch for your code
-When you are ready to start fork this repository to your own github account `da-dev-{your_name)`
-It's a good idea to make a couple of commits during development so we can see how you are progressing.
+## Tech Requirements
 
+To run this application locally, you need to have the following software installed:
 
-## How to submit your code for review
+- PHP (version 7.4 or higher)
+- Composer
+- Node.js (version 14 or higher)
+- npm (Node Package Manager)
 
-Please commit all of your working code to your repository.
-Once you have finished creating the app and have committed your code let a team member know that your app is ready for review.
-*MAKE SURE TO SHARE A LINK TO YOUR REPOSITORY!*
+## Installation
 
-### Make sure your app is ready for review!
+Follow these steps to install and run the application:
 
-We should be able to pull down your completed repository, install the packages and run it locally to review.
+1. Clone the repository:
+```bash
+git clone https://github.com/ugemasangkay/da-dev-masangkay
+```
 
-***
+2. Navigate to the project directory:
+```bash
+cd da-dev-masangkay/
+```
 
-# To-do List (Test Project)
+3. Install PHP dependencies:
+```bash
+composer install
+```
 
-We need to create a single list to-do app.
-There is no authentication required for this app.
+4. Install JavaScript dependencies:
+```bash
+npm install
+```
 
-The app should display a single to-do list. Anyone can add, remove, or mark complete items in the list.
+5. Create a copy of the .env.example file and rename it to .env. Update the necessary environment variables such as database credentials.
 
-The only field a to-do list item has is a text description. That is required to add an item to the to-do list.
+Env variable value used:
+```bash
+APP_NAME=DA-DEV-Masangkay
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-- When someone adds an item to the list it should save it to the database.
-- When someone marks an item on the list complete it should update it in the database and show the item as marked complete.
-- When someone removes the item from the list it should soft-delete the item and remove it from the list.
+6. Generate an application key:
+```bash
+php artisan key:generate
+```
 
+7. Run the database migrations and seed the database:
+```bash
+php artisan migrate --seed
+```
 
+8. Compile the assets:
+```bash
+npm run dev
+```
 
-## Scope
+9. Start the local development server:
+```bash
+php artisan serve
+```
 
-- [ ] I should be able to view all of the items in the to-do list.
-- [ ] I should be able to add an item to the list
-- [ ] I should be able to remove an item from the list
-- [ ] I should be able to mark an item from the list as complete
+10. Open your browser and visit http://localhost:8000 to access the application.
 
-There are no design requirements for this task. You can install Tailwind or Bootstrap for basic styling if you prefer or include no styling at all. 
+## Features
+- View all of the items in the to-do list.
+- Add an item to the list
+- Remove an item from the list
+- Mark an item from the list as complete
 
+## Directory Structure
 
-### Technical Requirements
-- Database: Mysql or PostgreSQL
-- API backend: Laravel
-- Frontend: React.js (with typescript and React hooks)
+The important directories and files in this project are:
 
-****
-#### Nice to have but not required:
-- Use Repository Pattern
-- Use Laravel's APiResource for API responses
-****
-Good luck and don't hesitate to reach out if you have any questions or need clarification on the scope or requirements.
+- `app/`: Contains Laravel application files, including models, controllers, and routes.
+- `resources/`: Contains frontend assets, including React components, views, and styles.
+- `database/migrations/`: Contains database migration files.
+- `database/seeds/`: Contains database seeder files.
+- `routes/`: Contains Laravel route definitions.
+- `public/`: Contains the compiled assets and the main entry point `index.php`.
+- `.env`: The environment configuration file. (Use `.env.example` for reference content)
+- `README.md`: This file.
+
+## API List
+
+```
++----------+---------------------+-----------------------------+------------------------------------------------------------+
+| Method   | URI                 | Name                        | Action                                                     |
++----------+---------------------+-----------------------------+------------------------------------------------------------+
+| GET|HEAD | /                   | generated::Wx6RbbAcTv1ZTuqv | Closure                                                    |
+| GET|HEAD | api                 | todos.index                 | App\Http\Controllers\TodoController@index                  |
+| POST     | api/todos           | todos.store                 | App\Http\Controllers\TodoController@store                  |
+| DELETE   | api/todos/{todo}    | todos.destroy               | App\Http\Controllers\TodoController@destroy                |
+| PUT      | api/todos/{todo}    | todos.update                | App\Http\Controllers\TodoController@update                 |
++----------+---------------------+-----------------------------+------------------------------------------------------------+
+```
+
+## Tech Stack
+
+- PHP 7.4.33
+- Laravel 8.75
+- React 18.2.0
+- NPM 9.6.1
+- Composer 2.5.7
+- MySQL
+
+## Author
+
+> Eugene Masangkay (ugemasangkay@gmail.com)
+
+## License
+
+This application is open-source and is licensed under the [MIT License](https://opensource.org/licenses/MIT).
