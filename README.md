@@ -67,7 +67,10 @@ php artisan key:generate
 
 7. Run the database migrations and seed the database:
 ```bash
-php artisan migrate --seed
+php artisan migrate
+
+// Run seeder
+php artisan db:seed --class=TodoSeeder
 ```
 
 8. Compile the assets:
