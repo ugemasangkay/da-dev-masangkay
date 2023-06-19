@@ -56,6 +56,8 @@ DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=root
 DB_PASSWORD=
+
+Note: Open the http://localhost/phpmyadmin/ and create a new database (Name: laravel), update the password if required
 ```
 
 6. Generate an application key:
