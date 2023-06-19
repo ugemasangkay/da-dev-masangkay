@@ -90,7 +90,7 @@ const TodoApp = () => {
         <table className="table">
             <thead>
                 <tr>
-                    <th>Todo</th>
+                    <th>To-do</th>
                     <th>Status</th>
                     <th>Last Update</th>
                     <th>Actions</th>
